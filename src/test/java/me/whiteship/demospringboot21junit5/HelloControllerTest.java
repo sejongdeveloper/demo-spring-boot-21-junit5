@@ -25,8 +25,8 @@ class HelloControllerTest {
     void testHello() throws Exception {
         ResultActions resultActions = mockMvc.perform(get("/hello"));
         Assertions.assertAll(
-                () -> resultActions.andExpect(status().isBadRequest()),
-                () -> resultActions.andExpect(content().string("hello world"))
+                () -> resultActions.andExpect(status().isOk()),
+                () -> resultActions.andExpect(content().string("hello"))
         );
     }
 }
